@@ -2,7 +2,7 @@
 
 ## About
 
-Border-Shape is a simple and easy to use border-radius generator
+Border-Shape is a simple and easy to use border-radius generator.
 
 ![Home Page](/readmeGif/borderHome.gif?raw=true "Home Page")
 
