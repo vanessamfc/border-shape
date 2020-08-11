@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-
-import { Container, StyledBorder } from "./styles";
+import { Container, StyledBorder, StyledInput } from "./styles";
 
 function Home() {
   const [topRadiusValue, setTopRadiusValue] = useState(50);
@@ -10,50 +9,60 @@ function Home() {
   console.log(bottomRadiusValue);
   return (
     <Container>
-      <input
-        type="range"
-        value={leftRadiusValue}
-        min="0"
-        max="100"
-        onChange={(e) => {
-          setLeftRadiusValue(parseInt(e.target.value));
-        }}
-      />
       <div>
-        <input
+        <StyledInput
           type="range"
-          value={topRadiusValue}
+          value={leftRadiusValue}
           min="0"
           max="100"
           onChange={(e) => {
-            setTopRadiusValue(parseInt(e.target.value));
+            setLeftRadiusValue(parseInt(e.target.value));
           }}
         />
-        <StyledBorder
-          top={topRadiusValue}
-          right={rightRadiusValue}
-          bottom={bottomRadiusValue}
-          left={leftRadiusValue}
-        ></StyledBorder>
-        <input
+        <div>
+          <StyledInput
+            type="range"
+            value={topRadiusValue}
+            min="0"
+            max="100"
+            onChange={(e) => {
+              setTopRadiusValue(parseInt(e.target.value));
+            }}
+          />
+          <StyledBorder
+            top={topRadiusValue}
+            right={rightRadiusValue}
+            bottom={bottomRadiusValue}
+            left={leftRadiusValue}
+          ></StyledBorder>
+          <StyledInput
+            type="range"
+            value={bottomRadiusValue}
+            min="0"
+            max="100"
+            onChange={(e) => {
+              setBottomRadiusValue(parseInt(e.target.value));
+            }}
+          />
+        </div>
+        <StyledInput
           type="range"
-          value={bottomRadiusValue}
+          value={rightRadiusValue}
           min="0"
           max="100"
           onChange={(e) => {
-            setBottomRadiusValue(parseInt(e.target.value));
+            setRightRadiusValue(parseInt(e.target.value));
           }}
         />
       </div>
-      <input
-        type="range"
-        value={rightRadiusValue}
-        min="0"
-        max="100"
-        onChange={(e) => {
-          setRightRadiusValue(parseInt(e.target.value));
-        }}
-      />
+      <div>
+        border radius:
+        <span>
+          {topRadiusValue}% {100 - topRadiusValue}% {100 - bottomRadiusValue}%{" "}
+          {bottomRadiusValue}% / {100 - leftRadiusValue}%{" "}
+          {100 - rightRadiusValue}% {rightRadiusValue}% {leftRadiusValue}%
+        </span>
+      </div>
     </Container>
   );
 }
