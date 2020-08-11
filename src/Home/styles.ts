@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import background from "../assets/backgroundImg.png";
 
 export const Container = styled.div`
   display: flex;
@@ -7,10 +8,23 @@ export const Container = styled.div`
   align-items: center;
   height: 100vh;
 
+  &::after {
+    content: "";
+    background-image: url(${background});
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-size: cover;
+  }
   > div:first-child {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
     > input {
       transform: rotate(-90deg);
     }
@@ -32,8 +46,21 @@ export const Container = styled.div`
     }
   }
   > div:last-child {
+    font-weight: bold;
+    background-color: #ff878d;
+    color: #fff;
+    border-radius: 5px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
+    height: 50px;
+
+    box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.25);
+    > span {
+      font-weight: bold;
+      margin-left: 5px;
+    }
   }
 `;
 
