@@ -2,21 +2,38 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  > input:first-child {
-    -webkit-appearance: slider-vertical;
-  }
 
-  > input:last-child {
-    -webkit-appearance: slider-vertical;
-  }
-  > div {
+  > div:first-child {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    > input {
+      transform: rotate(-90deg);
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      > input {
+        -webkit-appearance: slider-vertical;
+        appearance: none;
+        background: #3cd3ad;
+        border-radius: 10px;
+        height: 10px;
+        margin: 10px;
+      }
+    }
+  }
+  > div:last-child {
+    display: flex;
+    padding: 10px;
   }
 `;
 
@@ -28,10 +45,25 @@ export const StyledBorder = styled.div<{
 }>`
   height: 300px;
   width: 300px;
-  color: #ff4;
   background: linear-gradient(to right, #4cb8c4, #3cd3ad);
   border-radius: ${(props) => props.top}% ${(props) => 100 - props.top}%
     ${(props) => 100 - props.bottom}% ${(props) => props.bottom}% /
     ${(props) => 100 - props.left}% ${(props) => 100 - props.right}%
     ${(props) => props.right}% ${(props) => props.left}%;
+`;
+
+export const StyledInput = styled.input`
+  -webkit-appearance: none;
+  appearance: none;
+  background: #3cd3ad;
+  border-radius: 10px;
+  height: 10px;
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.75);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  }
 `;
