@@ -6,7 +6,7 @@ function Home() {
   const [rightRadiusValue, setRightRadiusValue] = useState(50);
   const [bottomRadiusValue, setBottomRadiusValue] = useState(50);
   const [leftRadiusValue, setLeftRadiusValue] = useState(50);
-  console.log(bottomRadiusValue);
+
   return (
     <Container>
       <div>
@@ -56,7 +56,7 @@ function Home() {
         />
       </div>
       <div>
-        border radius:
+        Border Radius:
         <span>
           {topRadiusValue}% {100 - topRadiusValue}% {100 - bottomRadiusValue}%{" "}
           {bottomRadiusValue}% / {100 - leftRadiusValue}%{" "}
