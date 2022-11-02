@@ -1,5 +1,5 @@
 # Border-Shape
-Demo:  [(https://border-shape.vercel.app/)
+Demo:  [(https://border-shape.vercel.app/)]
 ## About
 
 Border-Shape is a simple and easy to use border-radius generator.
