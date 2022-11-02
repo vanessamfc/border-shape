@@ -1,5 +1,5 @@
 # Border-Shape
-Demo:  [![Netlify Status](https://api.netlify.com/api/v1/badges/bfb478a6-aa6e-4140-905d-febf28a0b4ca/deploy-status)](https://bordershape.vanessamfc.site)
+Demo:  [(https://border-shape.vercel.app/)
 ## About
 
 Border-Shape is a simple and easy to use border-radius generator.
